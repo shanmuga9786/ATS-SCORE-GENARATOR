@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Score Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #000000;
+        }
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #0078d7;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: large;
+        }
+        .navbar a:hover {
+            text-shadow: 0 0 5px rgb(255, 255, 255);
+        }
+        .container {
+            max-width: 800px;
+            margin: 110px auto;
+            padding: 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0078d7;
+        }
+        .text-boxes {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        textarea {
+            width: 48%;
+            height: 200px;
+            font-size: 14px;
+            padding: 10px;
+            border: 2px solid #0078d7;
+            border-radius: 4px;
+            resize: none;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #0078d7;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="score.html">Score</a>
+        <a href="do and dont.html">Do and Don't</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>ATS Score Generator</h1>
+        <div class="text-boxes">
+            <textarea id="resume" placeholder="Paste your Resume here..."></textarea>
+            <textarea id="jobDesc" placeholder="Paste the Job Description here..."></textarea>
+        </div>
+        <button id="generateScore">Generate Score</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Score Calculation Algorithm
+        document.getElementById("generateScore").addEventListener("click", function () {
+            const resume = document.getElementById("resume").value.toLowerCase();
+            const jobDesc = document.getElementById("jobDesc").value.toLowerCase();
+
+            if (!resume || !jobDesc) {
+                document.getElementById("result").textContent = "Please enter both Resume and Job Description.";
+                return;
+            }
+
+            // Remove stop words
+            const stopWords = ["is", "the", "and", "of", "in", "to", "a", "with", "on", "for", "at", "by", "it", "as"];
+            const cleanText = (text) =>
+                text
+                    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+                    .split(" ")
+                    .filter((word) => !stopWords.includes(word) && word.length > 1);
+
+            const resumeWords = cleanText(resume);
+            const jobWords = cleanText(jobDesc);
+
+            // Match keywords
+            const matchedWords = resumeWords.filter((word) => jobWords.includes(word));
+            const score = ((matchedWords.length / jobWords.length) * 100).toFixed(2);
+
+            // Display score
+            document.getElementById("result").textContent = `ATS Score: ${score}% (${matchedWords.length} out of ${jobWords.length} keywords matched)`;
+        });
+    </script>
+</body>
+</html>

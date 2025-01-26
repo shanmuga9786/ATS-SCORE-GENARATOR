@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Do's and Don'ts</title>
+    <style>
+        body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f9f9f9;
+              color: #000000;
+        }
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #0078d7;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size:large;
+        }
+
+        a:hover {
+            text-shadow: 0 0 5px rgb(255, 255, 255);
+        }
+
+        /* Content Section */
+        #content {
+            margin: 80px 20px;
+            padding: 20px;
+        }
+
+        #main-heading {
+            font-size: 36px;
+            color: #0078d7;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #sub-heading {
+            font-size: 28px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        #dos-section, #donts-section {
+            margin-bottom: 30px;
+        }
+
+        #dos-list, #donts-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #dos-list li {
+            background: #e8f5e9;
+            color: #2e7d32;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        #dos-list li span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        #donts-list li {
+            background: #ffebee;
+            color: #c62828;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        #donts-list li span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"class="navbar" >
+        <a href="index.html">Home</a>
+        <a href="score.html">Score</a>
+        <a href="do and dont.html">Do and Don't</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <h1 id="main-heading">Do’s and Don’ts for ATS-Friendly Resumes</h1>
+
+        <!-- Do's Section -->
+        <div id="dos-section">
+            <h2 id="sub-heading">Do’s</h2>
+            <ul id="dos-list">
+                <li><span>✓</span> Incorporate Relevant Keywords: Use keywords directly from the job description to align your resume with the role's requirements.</li>
+                <li><span>✓</span> Tailor Your Resume for Each Job: Customize your resume to highlight experiences and skills that are most relevant to the specific job you're applying for.</li>
+                <li><span>✓</span> Use a Simple and Consistent Format: Stick to professional fonts (e.g., Arial, Calibri) and avoid excessive formatting.</li>
+                <li><span>✓</span> Save Your Resume in an ATS-Friendly Format: Use file types like Word (.docx) or PDF that are compatible with ATS.</li>
+                <li><span>✓</span> Focus on a Professional Summary: Include a concise summary at the top that highlights your key qualifications and career objectives.</li>
+                <li><span>✓</span> Highlight Achievements with Metrics: Quantify accomplishments using numbers and percentages to demonstrate impact. Example: “Increased team efficiency by 20% through process optimization.”</li>
+                <li><span>✓</span> Use Standard Section Headings: Stick to recognizable headings such as “Work Experience,” “Education,” and “Skills.”</li>
+                <li><span>✓</span> List Relevant Certifications and Skills: Highlight certifications, technical skills, and tools relevant to the job.</li>
+                <li><span>✓</span> Use Action-Oriented Language: Start bullet points with strong action verbs like “Led,” “Managed,” “Developed,” or “Implemented.”</li>
+                <li><span>✓</span> Test Your Resume for ATS Compatibility: Use online ATS checkers to ensure your resume can be successfully parsed.</li>
+            </ul>
+        </div>
+
+        <!-- Don'ts Section -->
+        <div id="donts-section">
+            <h2 id="sub-heading">Don’ts</h2>
+            <ul id="donts-list">
+                <li><span>✗</span> Avoid Fancy Fonts, Graphics, or Colors: ATS systems may fail to parse resumes with creative designs or decorative elements.</li>
+                <li><span>✗</span> Don’t Use Columns, Tables, or Charts: Stick to a single-column format to ensure proper readability by ATS.</li>
+                <li><span>✗</span> Avoid Abbreviations Without Explanation: Provide the full form of terms with abbreviations in parentheses. Example: “Search Engine Optimization (SEO).”</li>
+                <li><span>✗</span> Don’t Include Irrelevant Information: Avoid personal details like age, marital status, religion, or hobbies unless relevant to the role.</li>
+                <li><span>✗</span> Avoid Overloading with Keywords: Use keywords naturally and in context; do not overstuff the resume.</li>
+                <li><span>✗</span> Don’t Use Headers or Footers for Important Information: ATS systems may skip content in headers and footers, so keep critical information in the main body.</li>
+                <li><span>✗</span> Avoid Long Paragraphs: Use bullet points for readability instead of lengthy blocks of text.</li>
+                <li><span>✗</span> Don’t Submit a Resume with Errors: Spelling and grammar mistakes can harm your credibility. Proofread thoroughly.</li>
+                <li><span>✗</span> Don’t Copy Job Descriptions Directly: Rewrite content in your own words while including relevant keywords.</li>
+                <li><span>✗</span> Avoid Excessive Length: Limit your resume to one or two pages, focusing on relevant experiences and skills.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
